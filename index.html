@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/style_dark.css" />
+		<link rel="stylesheet" href="./css/style_switch.css" />
+		<title>Page de lien</title>
+	</head>
+
+	<body>
+		<h1>Page de liens</h1>
+
+		<div class="power-switch" onclick="togglelight()">
+			<input type="checkbox" />
+			<div class="button">
+				<svg class="power-off">
+					<use xlink:href="#line" class="line" />
+					<use xlink:href="#circle" class="circle" />
+				</svg>
+				<svg class="power-on">
+					<use xlink:href="#line" class="line" />
+					<use xlink:href="#circle" class="circle" />
+				</svg>
+			</div>
+		</div>
+		<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+			<symbol
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 150 150"
+				id="line"
+			>
+				<line x1="75" y1="34" x2="75" y2="58" />
+			</symbol>
+			<symbol
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 150 150"
+				id="circle"
+			>
+				<circle cx="75" cy="80" r="35" />
+			</symbol>
+		</svg>
+
+		<form method="POST">
+			<div>
+				<label for="titre">Titre : </label>
+				<input autocomplete="off" type="text" name="titre" />
+			</div>
+
+			<div>
+				<label for="theme">Theme : </label>
+				<select name="theme"></select>
+			</div>
+
+			<div>
+				<label for="desc">Description : </label>
+				<textarea name="desc"></textarea>
+			</div>
+
+			<div>
+				<label for="lien">Lien : </label>
+				<input autocomplete="off" type="url" name="lien" />
+			</div>
+
+			<button onclick="ajoutCarte()" type="button">Ajouter</button>
+		</form>
+
+		<div class="container"></div>
+
+		<script type="text/javascript" src="./JS/donnees.js"></script>
+		<script type="text/javascript" src="./JS/finale.js"></script>
+	</body>
+</html>
